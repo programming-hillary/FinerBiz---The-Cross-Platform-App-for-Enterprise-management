@@ -1,3 +1,4 @@
+import 'package:finer_biz/view/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:finer_biz/src/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -77,9 +78,19 @@ class _LoginPageState extends State<LoginPage> {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [Color(0xfffbb448), Color(0xfff7892b)])),
-      child: const Text(
-        'Login',
-        style: TextStyle(fontSize: 20, color: Colors.white),
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const HomeScreen(),
+            ),
+          );
+        },
+        child: const Text(
+          'Login',
+          style: TextStyle(fontSize: 20, color: Colors.white),
+        ),
       ),
     );
   }

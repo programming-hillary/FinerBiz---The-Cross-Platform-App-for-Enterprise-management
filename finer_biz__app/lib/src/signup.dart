@@ -1,3 +1,4 @@
+import 'package:finer_biz/view/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:finer_biz/src/Widget/bezierContainer.dart';
 import 'package:finer_biz/src/loginPage.dart';
@@ -76,9 +77,19 @@ class _SignUpPageState extends State<SignUpPage> {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [Color(0xfffbb448), Color(0xfff7892b)])),
-      child: const Text(
-        'Register Now',
-        style: TextStyle(fontSize: 20, color: Colors.white),
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const HomeScreen(),
+            ),
+          );
+        },
+        child: const Text(
+          'Register Now',
+          style: TextStyle(fontSize: 20, color: Colors.white),
+        ),
       ),
     );
   }
@@ -86,8 +97,8 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget _loginAccountLabel() {
     return InkWell(
       onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LoginPage()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const LoginPage()));
       },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 20),
